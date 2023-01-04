@@ -11,8 +11,7 @@ useStorage('vuesweeper-state', play.state)
 const state = $computed(() => play.board)
 
 const mineRest = $computed(() => {
-  if (!play.state.value.mineGenerated)
-    return play.mines
+  if (!play.state.value.mineGenerated) return play.mines
   return play.blocks.reduce((a, b) => a - (b.flagged ? 1 : 0), play.mines)
 })
 
